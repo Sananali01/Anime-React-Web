@@ -34,10 +34,10 @@ const Navbar = () => {
               </Link>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <Link className="dropdown-item" to="/anime">
-                  <FontAwesomeIcon icon={faList}  /> Anime List
+                  <FontAwesomeIcon icon={faList}  /> Animes
                 </Link>
                 <Link className="dropdown-item" to="/movie">
-                  <FontAwesomeIcon icon={faList}  /> Movie List
+                  <FontAwesomeIcon icon={faList}  /> Movies
                 </Link>
               </div>
             </li>
