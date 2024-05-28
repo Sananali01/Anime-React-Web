@@ -22,49 +22,49 @@ const ContactUs = () => {
         }));
     }
 
-    const submitData = async (event) =>{
+    const submitData = async (event) => {
         event.preventDefault();
-    const{ firstName,lastName, email,phone,message,} =userData;
+        const { firstName, lastName, email, phone, message, } = userData;
 
-   if (firstName && lastName && email && phone && message ){
+        if (firstName && lastName && email && phone && message) {
 
 
 
-   const res=  fetch('https://anime-fusion-1d871-default-rtdb.firebaseio.com/UserDataRecord.json',
-    {
-        method : "POST",
-        headers : {
-            "content-type":"application/json"
-        },
-        
-        body:JSON.stringify({
-        firstName,
-        lastName,
-        email,
-        phone,
-        message,
-        })
-    }
-    );
+            const res = fetch('https://anime-fusion-1d871-default-rtdb.firebaseio.com/UserDataRecord.json',
+                {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
 
-    if(res){
-        setUserData({
-            firstName: "",
-            lastName: "",
-            email: "",
-            phone: "",
-            message: "",
-        })
-        alert("Data Stored")
-    }
-    else{
-        alert("Please fill the data")
-    }
-  
-}
-else{
-    alert("Please fill the data")
-}
+                    body: JSON.stringify({
+                        firstName,
+                        lastName,
+                        email,
+                        phone,
+                        message,
+                    })
+                }
+            );
+
+            if (res) {
+                setUserData({
+                    firstName: "",
+                    lastName: "",
+                    email: "",
+                    phone: "",
+                    message: "",
+                })
+                alert("Data Stored")
+            }
+            else {
+                alert("Please Fill The Data")
+            }
+
+        }
+        else {
+            alert("Please Fill The Data")
+        }
     }
 
 
@@ -169,7 +169,7 @@ else{
                             <a href="/login" className="ms-2">Register here</a>
                         </div>
                         <button data-mdb-ripple-init type="button" className="btn btn-primary btn-block mb-4 "
-                         onClick={submitData}>
+                            onClick={submitData}>
                             Send Message</button>
                     </form>
                 </div>
