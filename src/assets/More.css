@@ -1,0 +1,259 @@
+/* More.css */
+.about-container {
+    padding: 50px 20px;
+}
+
+h1 {
+    color: #1982C4;
+}
+
+.about-content {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.about-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.about-text {
+    display: flex;
+    flex: 1;
+    margin-right: 20px;
+    text-align: left;
+}
+
+.team-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 60vh; /* Adjust this value as needed */
+    border-radius: 8px;
+}
+.team-container {
+    margin-top: 50px;
+    text-align: left;
+}
+
+/* Animation */
+.about-text,
+.team-image,
+.team-container {
+    opacity: 0;
+    animation: fade-in 1s forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px; /* Added margin for spacing */
+}
+
+.team-member {
+    background-color: #333;
+    color: #fff;
+    border-radius: 8px;
+    overflow: hidden; /* Ensure the photo doesn't overflow the card */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+
+}
+
+.team-card{
+    margin-top: 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.team-member-photo {
+    height: 13rem;
+    width: 13rem;
+    border-radius: 50%;
+    border: .5rem solid #fff;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, .3);
+    object-fit: cover;
+}
+
+
+
+.team-card h3 {
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: xx-large;
+}
+
+.team-card p {
+    font-size: large;
+    font-style: italic;
+    color: #fff;
+}
+
+
+
+
+
+
+
+/* contact.css */
+
+
+  
+  .contact-content {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+  }
+  
+  .contact-info,
+  .contact-form,
+  .social-media {
+    margin-bottom: 20px;
+  }
+  
+  .contact-info{
+    width: fit-content;
+  }
+  strong{
+    color: #a3a3a3;
+  }
+
+  .social-icons {
+    display: flex;
+   flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+.social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+  
+  .social-icons li {
+    margin: 0 10px;
+  }
+
+
+
+
+/*  Faq css */
+.accordion-content {
+    display: none;
+  }
+  
+  .accordion-content.open {
+    display: block;
+  }
+  .faq-container {
+    padding: 50px 20px;
+    color: #ffffff;
+  }
+  
+  .faq-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .faq-title {
+    font-size: 3rem;
+    color: #1982C4;
+  }
+  
+  .faq-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .faq-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .faq-section {
+    margin-bottom: 30px;
+  }
+  
+  .faq-section-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #1982C4;
+    border-bottom: 2px solid #1982C4;
+    padding-bottom: 10px;
+  }
+  
+  .faq-item {
+    margin-bottom: 20px;
+  }
+  
+  .faq-question {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  
+  .faq-answer {
+    font-size: 1rem;
+    color: #ffffff;
+  }
+  
+  .faq-contact {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .faq-contact-title {
+    font-size: 2rem;
+    color: #1982C4;
+  }
+  
+  .faq-contact-text {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .faq-social-media {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .faq-social-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1982C4;
+  }
+  
+  .faq-social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .faq-social-icon {
+    font-size: 1.5rem;
+    color: #ffffff;
+    transition: color 0.3s;
+  }
+  
+  .faq-social-icon:hover {
+    color: #1982C4;
+  }
+  

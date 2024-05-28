@@ -1,0 +1,187 @@
+/* styles.css */
+
+/* Card hover animation */
+.card {
+  transition: all 0.3s ease-in-out;
+  border: 2px solid #d6d6d6;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  background: transparent;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 0.9rem;
+}
+
+/* Button hover effect */
+.btn-primary {
+  background: linear-gradient(to right, #1982C4, #29339B);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #29339B; /* Darker orange color on hover */
+}
+
+/* Category item hover animation */
+.category-container{
+  height: 70vh;
+}
+.category-item {
+  border: 2px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.category-item a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.category-item:hover {
+  background: #29339B;
+  color: white;
+}
+
+/* Custom Jumbotron styles */
+.custom-jumbotron {
+  position: relative;
+  background: url('../images/main.jpg') no-repeat center center;
+  background-size: cover;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  margin-top: 0px;
+}
+
+.custom-jumbotron::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay to make background image dull */
+  z-index: 1;
+}
+
+.custom-jumbotron .overlay {
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.custom-jumbotron h1,
+.custom-jumbotron p {
+  margin: 0;
+}
+
+.custom-jumbotron .btn {
+  margin-top: 15px;
+}
+
+/* Text animation */
+.animated-text {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Image animation */
+.animated-image {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .category-item {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .category-container {
+   height: auto;
+  }
+  .card-img-top {
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .custom-jumbotron {
+    height: auto;
+  }
+}
+
+h2 {
+  color: #1982C4;
+}
+
+/* Fade left animation */
+.fade-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: fadeLeftAnimation 1s ease forwards;
+}
+
+.fade-left-img img {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: fadeLeftAnimation 1s ease forwards;
+}
+
+@keyframes fadeLeftAnimation {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade right animation */
+.fade-right {
+  opacity: 0;
+  transform: translateX(50px);
+  animation: fadeRightAnimation 1s ease forwards;
+}
+
+@keyframes fadeRightAnimation {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+

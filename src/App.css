@@ -1,0 +1,423 @@
+body{background: #000000;}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+
+.navbar {
+  background: #000000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+}
+
+.navbar-brand {
+  color: #FDFFFC;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.navbar-header {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.nav-link {
+  color: #FDFFFC;
+  font-size: 1.2rem;
+  margin: 0 15px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav-link:hover {
+  color: #1982C4;
+  transform: translateY(-2px);
+}
+
+.nav-link:focus {
+  font-weight: bold;
+  color: #1982C4;
+  background-color: transparent;
+}
+
+
+
+.btn-login {
+  color: #FDFFFC;
+  background-color: #1982C4;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin-left: 15px;
+  border-radius: 20px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #29339B;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.navbar-collapse {
+  animation: fadeInDown 0.5s ease-in-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -50%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-icons {
+  display: flex;
+  align-items: center;
+}
+
+.nav-icon {
+  color: #FDFFFC;
+  font-size: 1.5rem;
+  margin-right: 15px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav-icon:hover {
+  color: #1982C4;
+  transform: translateY(-2px);
+}
+
+
+.navbar-toggler {
+  border: none;
+  cursor: pointer;
+  border: 2px solid #1982C4;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+
+.navbar-toggler .icon-bar {
+  display: block;
+  width: 31px;
+  height: 3px;
+  background-color: #FDFFFC;
+  margin-bottom: 4px;
+  transition: background-color 0.3s;
+}
+
+
+.navbar-toggler.collapsed .icon-bar {
+  background-color: #FDFFFC;
+  /* Adjust the color of collapsed bars */
+}
+
+.navbar-toggler-icon {
+
+  height: 20px;
+
+}
+
+
+
+.dropdown-menu {
+  background-color: #ffffff; /* Background color */
+  border: 1px solid #ced4da; /* Border */
+  border-radius: 0.25rem; /* Border radius */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+}
+
+.dropdown-item {
+  color: #000000; /* Text color */
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  background-color: #f8f9fa; /* Background color on hover/focus */
+  color: #1982C4; /* Text color on hover/focus */
+}
+
+.dropdown-divider {
+  border-top: 1px solid #ced4da; /* Divider color */
+}
+
+
+@media screen and (min-width: 1470px) and (max-width: 2560px) {
+  .navbar-icons {
+  position: relative;
+  left: 120px;
+
+  }
+}
+
+
+@media screen and (min-width: 1100px) and (max-width: 1470px) {
+  .navbar-icons {
+  position: relative;
+  left: 25px;
+
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1100px) {
+  .navbar-icons {
+  position: relative;
+  left: 25px;
+
+  }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 345px) {
+  .navbar-toggler {
+width: 14%
+}
+.navbar-toggler .icon-bar {
+width: 17px;
+margin-left: -2px;
+}
+}
+@media screen and (min-width: 320px) and (max-width: 991px) {
+.navbar-icons{
+  margin-top: 30px;
+  justify-content: center;
+}
+}
+
+/* Footer.css */
+
+
+footer {
+  background-color: #343a40; /* Example background color */
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-icons {
+  animation: slideInRight 1s ease;
+}
+
+.footer-content {
+  animation: slideInLeft 1s ease;
+  color: white;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.right{
+  border-top: 1px solid gray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Error Section */
+
+
+.error-container {
+  text-align: center;
+  margin: 150px auto;
+  padding: 60px;
+  border: 2px solid #29339B;
+  border-radius: 5px;
+  width: fit-content;
+  box-shadow: 5px 5px 5px 5px #29339B;
+}
+
+.h1 {
+  color: #29339B;
+  font-size: 80px;
+  margin: 0;
+}
+
+.p {
+  font-size: 24px;
+  color: white;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1982C4;
+}
+
+
+
+/* Review CSS */
+.anime-detail {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.user-reviews {
+  margin-top: 100px;
+}
+.review-head{
+color: #29339B;
+}
+
+
+select,
+button {
+  margin-top: 10px;
+}
+
+textarea {
+  color: white;
+  width: 100%; 
+  max-width: 100%;
+  box-sizing: border-box; 
+  margin-top: 10px;
+  border: 2px solid #d6d6d6;
+  border-radius: 12px;
+  background: transparent;
+}
+.review-card {
+  background-color: #444;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #666;
+}
+
+.reviews-list{
+margin-top: 80px;
+}
+.review-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-rating{
+  font-size: larger;
+}
+.user {
+  font-weight: bold;
+}
+
+.rating {
+  color: yellow;
+}
+
+.review-text {
+  margin-top: 5px;
+  color: #ddd;
+}
+
+.no-reviews {
+  color: #ddd;
+  font-style: italic;
+}
+
+.rating-stars{
+  display: contents;
+    font-size: x-large;
+}
+.review-input {
+
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+
+
+select {
+  padding: 10px;
+  margin-top: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  appearance: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Style the arrow in the select dropdown */
+select::-ms-expand {
+  display: none;
+}
+
+/* Style the options in the select dropdown */
+select option {
+  padding: 10px;
+}
+
+/* Style the placeholder text in the select dropdown */
+select option:first-child {
+  color: #aaa;
+}
+
+/* Hover effect for select dropdown */
+select:hover {
+  border-color: #aaa;
+}
+
+/* Focus effect for select dropdown */
+select:focus {
+  border-color: #555;
+  outline: none;
+  box-shadow: 0 0 5px #aaa;
+}
