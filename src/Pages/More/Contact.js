@@ -1,9 +1,73 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../assets/More.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter, faGoogle, faInstagram, faLinkedinIn, faGithub, faYoutube, faPinterest, faTiktok, faSnapchat } from '@fortawesome/free-brands-svg-icons';
 
 const ContactUs = () => {
+
+    const [userData, setUserData] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        message: "",
+    });
+
+
+    const postUserData = (event) => {
+        const { name, value } = event.target;
+        setUserData(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    }
+
+    const submitData = async (event) =>{
+        event.preventDefault();
+    const{ firstName,lastName, email,phone,message,} =userData;
+
+   if (firstName && lastName && email && phone && message ){
+
+
+
+   const res=  fetch('https://anime-fusion-1d871-default-rtdb.firebaseio.com/UserDataRecord.json',
+    {
+        method : "POST",
+        headers : {
+            "content-type":"application/json"
+        },
+        
+        body:JSON.stringify({
+        firstName,
+        lastName,
+        email,
+        phone,
+        message,
+        })
+    }
+    );
+
+    if(res){
+        setUserData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            message: "",
+        })
+        alert("Data Stored")
+    }
+    else{
+        alert("Please fill the data")
+    }
+  
+}
+else{
+    alert("Please fill the data")
+}
+    }
+
+
     return (
         <div className="contact-container mt-5">
             <div className="contact-content">
@@ -52,39 +116,61 @@ const ContactUs = () => {
                 </div>
                 <div className="col-md-5 contact-form">
                     <h2>Send us a Message</h2>
-                    <form className='text-white mt-4'>
+                    <form className='text-white mt-4' method='POST'>
                         <div className="row mb-4">
                             <div className="col">
                                 <div className="form-outline">
-                                    <label className="form-label" for="form6Example1">First name</label>
-                                    <input type="text" id="form6Example1" className="form-control" placeholder='First Name' />
+                                    <label className="form-label" for="form6Example1">First Name</label>
+                                    <input type="text" id="form6Example1" className="form-control"
+                                        name='firstName'
+                                        value={userData.firstName}
+                                        onChange={postUserData}
+                                        placeholder='First Name' />
                                 </div>
                             </div>
                             <div className="col">
                                 <div className="form-outline">
-                                    <label className="form-label" for="form6Example2">Last name</label>
-                                    <input type="text" id="form6Example2" className="form-control" placeholder='Last Name' />
+                                    <label className="form-label" for="form6Example2">Last Name</label>
+                                    <input type="text" id="form6Example2" className="form-control"
+                                        name='lastName'
+                                        value={userData.lastName}
+                                        onChange={postUserData}
+                                        placeholder='Last Name' />
                                 </div>
                             </div>
                         </div>
                         <div className="form-outline mb-4">
                             <label className="form-label" for="form6Example5">Email</label>
-                            <input type="email" id="form6Example5" className="form-control" placeholder='Email' />
+                            <input type="email" id="form6Example5" className="form-control"
+                                name='email'
+                                value={userData.email}
+                                onChange={postUserData}
+                                placeholder='Email' />
                         </div>
                         <div className="form-outline mb-4">
                             <label className="form-label" for="form6Example6">Phone</label>
-                            <input type="number" id="form6Example6" className="form-control" placeholder='Phone Number' />
+                            <input type="number" id="form6Example6" className="form-control"
+                                name='phone'
+                                value={userData.phone}
+                                onChange={postUserData}
+                                placeholder='Phone Number' />
                         </div>
                         <div className="form-outline mb-4">
                             <label className="form-label" for="form6Example7">Additional information</label>
-                            <textarea className="form-control" id="form6Example7" rows="4" placeholder='Write a Message'></textarea>
+                            <textarea className="form-control" id="form6Example7" rows="4"
+                                name='message'
+                                value={userData.message}
+                                onChange={postUserData}
+                                placeholder='Write a Message'></textarea>
                         </div>
                         <div className="form-check d-flex justify-content-center mb-4">
                             <label className="form-check-label" htmlFor="form6Example8"> Create an account? </label>
                             &nbsp;&nbsp;&nbsp;
                             <a href="/login" className="ms-2">Register here</a>
                         </div>
-                        <button data-mdb-ripple-init type="button" className="btn btn-primary btn-block mb-4">Send Message</button>
+                        <button data-mdb-ripple-init type="button" className="btn btn-primary btn-block mb-4 "
+                         onClick={submitData}>
+                            Send Message</button>
                     </form>
                 </div>
             </div>
