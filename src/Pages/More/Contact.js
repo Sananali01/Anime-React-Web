@@ -30,7 +30,7 @@ const ContactUs = () => {
 
 
 
-            const res = fetch('https://anime-fusion-1d871-default-rtdb.firebaseio.com/UserDataRecord.json',
+            const res = fetch('https://anime-fusion-web-app-default-rtdb.firebaseio.com//UserDataRecord.json',
                 {
                     method: "POST",
                     headers: {
