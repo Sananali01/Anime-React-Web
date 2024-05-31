@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faList, faTags, faSearch, faSignInAlt, faPen, faInfoCircle, faEnvelope, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faList, faTags, faSearch, faSignInAlt, faPen, faInfoCircle, faEnvelope, faQuestionCircle, faUser } from '@fortawesome/free-solid-svg-icons';
 import logo from '../assets/logo.png';
+import { useAuth } from '../AuthContext';
 
 const Navbar = () => {
+  const { user, logout } = useAuth();
+
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container">
@@ -34,10 +37,10 @@ const Navbar = () => {
               </Link>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <Link className="dropdown-item" to="/anime">
-                  <FontAwesomeIcon icon={faList}  /> Animes
+                  <FontAwesomeIcon icon={faList} /> Animes
                 </Link>
                 <Link className="dropdown-item" to="/movie">
-                  <FontAwesomeIcon icon={faList}  /> Movies
+                  <FontAwesomeIcon icon={faList} /> Movies
                 </Link>
               </div>
             </li>
@@ -72,15 +75,25 @@ const Navbar = () => {
             <Link className="nav-icon" to="/search">
               <FontAwesomeIcon icon={faSearch} />
             </Link>
-            <Link className="btn btn-login" to="/login">
-              <FontAwesomeIcon icon={faSignInAlt} /> Login
-            </Link>
+            {user ? (
+              <>
+                <Link className="nav-icon" to="/dashboard">
+                  <FontAwesomeIcon icon={faUser} />
+                </Link>
+                <button className="btn btn-login" onClick={logout}>
+                  <FontAwesomeIcon icon={faSignInAlt} /> Logout
+                </button>
+              </>
+            ) : (
+              <Link className="btn btn-login" to="/login">
+                <FontAwesomeIcon icon={faSignInAlt} /> Login
+              </Link>
+            )}
           </div>
         </div>
-
       </div>
     </nav>
   );
 }
 
-export default Navbar;
+export default Navbar
