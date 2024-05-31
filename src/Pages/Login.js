@@ -31,7 +31,7 @@ function Login() {
   const handleSocialLogin = async (provider) => {
     try {
       const result = await signInWithPopup(auth, provider);
-      const user = result.user;
+      const user = result.user; 
       toast.success(`Signed in with ${provider.providerId} successfully!`);
       setTimeout(() => {
         window.location.href = '/dashboard'; // Redirect to the dashboard
