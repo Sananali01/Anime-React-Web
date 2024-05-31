@@ -11,7 +11,7 @@ function Login() {
       <div className="row justify-content-center">
         <div className="col-md-6">
           <div className="mt-5">
-            {/* Pills navs */}
+
             <ul className="nav nav-pills nav-justified mb-3" role="tablist">
               <li className="nav-item" role="presentation">
                 <Link
@@ -37,9 +37,7 @@ function Login() {
                 </Link>
               </li>
             </ul>
-            {/* Pills navs */}
 
-            {/* Pills content */}
             <div className="tab-content">
               <div
                 className={`tab-pane fade ${activeTab === 'login' ? 'show active' : ''}`}
@@ -175,7 +173,6 @@ function Login() {
                 </form>
               </div>
             </div>
-            {/* Pills content */}
           </div>
         </div>
       </div>
